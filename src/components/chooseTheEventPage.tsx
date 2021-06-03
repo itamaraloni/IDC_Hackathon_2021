@@ -10,9 +10,6 @@ const ChooseTheEventPage = (props:ChooseTheEventProps) => {
         <h1>Choose the event</h1>
         <button onClick={()=>props.chosenEvent("birthday")}>Birthday</button>
         <button onClick={()=>props.chosenEvent("wedding")}>Wedding</button>
-        <button onClick={()=>props.chosenEvent("anniversary")}>Anniversary</button>
-        <button onClick={()=>props.chosenEvent("new job")}>New job</button>
-        <button onClick={()=>props.chosenEvent("new born baby")}>New born baby</button>
       </div>)
 }
 

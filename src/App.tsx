@@ -5,13 +5,21 @@ import ForWhopage from './components/forWhoPage'
 
 import './App.css';
 
+export type Person ={
+  name: string;
+  nickname: string;
+  age: string;
+  bestQualities: string[];
+}
+const emptyPerson:Person = {name: "empty", nickname: "empty", age: "empty", bestQualities: []}
+
 export type AppState = {
   currPage: string;
   typeOfEvent: string;
-  forWho1: string;
+  forWho1: Person;
   relationship: string;
-  forWho2: string;
-  fromWho: string;
+  forWho2: Person;
+  fromWho: Person;
 
 };
 
@@ -19,20 +27,20 @@ export class App extends React.PureComponent<{}, AppState>{
   state: AppState = {
     currPage: "welcome",
     typeOfEvent: "default",
-    forWho1: "default",
+    forWho1: emptyPerson,
     relationship: "default",
-    forWho2: "default",
-    fromWho: "default",
+    forWho2: emptyPerson,
+    fromWho: emptyPerson,
   };
 
   async componentDidMount() {
     this.setState({
       currPage:"welcome",
       typeOfEvent: "default",
-      forWho1: "default",
+      forWho1: emptyPerson,
       relationship: "default",
-      forWho2: "default",
-      fromWho: "default",
+      forWho2: emptyPerson,
+      fromWho: emptyPerson,
     })
   }
 
@@ -52,7 +60,7 @@ export class App extends React.PureComponent<{}, AppState>{
     else if(this.state.currPage === "for who?"){
       return <ForWhopage typeOfEvent={this.state.typeOfEvent} updateData={this.updateFromWho}/>
     }
-    return (<div>todo change</div>)
+    return (<div>{this.genGreeting()}</div>)
   }
 
   changeToChooseTheEvent = () => {
@@ -68,12 +76,40 @@ export class App extends React.PureComponent<{}, AppState>{
     })
   }
 
-  updateFromWho = (forWho1:string, forWho2:string, relationship:string) => {
+  updateFromWho = (forWho1:Person, forWho2:Person, relationship:string) => {
     this.setState({
       forWho1: forWho1,
       forWho2: forWho2,
       relationship: relationship,
+      currPage: "generate Greeting",
     })
+  }
+
+  genBirthday = (forWho1: Person, fromWho: Person, relationship: string) => {
+    return (<div>
+            <h1>Dear {forWho1.name}!</h1>
+            <p>Hope you have a happy {forWho1.age}th birthday!</p>
+            {forWho1.bestQualities.length > 3 ? <p>Another year older, and you just keep getting {forWho1.bestQualities[0]}, {forWho1.bestQualities[1]}, {forWho1.bestQualities[2]} and more amazing!</p> : <p></p>}
+            <p>Hope your birthday brings some time to relax, do your favorite things, and remember how much you’re loved</p>
+            <p>Love you, {forWho1.name}.</p>
+          </div>)
+  }
+
+ genWedding = (forWho1: Person, forWho2: Person, fromWho: Person, relationship: string) => {
+    return (<div>
+        <h1>Dear {forWho1.name} and {forWho2.name}!</h1>
+        <p>Congratulations on your wedding day and best wishes for a happy life together!
+            May the love you share today grow stronger as you grow old together.
+            Hope your marriage will be filled with all the right ingredients: a heap of {}, a dash of {}, a touch of {}, and a spoonful of {}.
+            Love you, {}.</p>
+      </div>)
+    }
+
+  genGreeting = () => {
+    if (this.state.typeOfEvent === "birthday")
+      return <div>{this.genBirthday(this.state.forWho1, this.state.fromWho, this.state.relationship)}</div>;
+    else 
+      return <div>{this.genWedding(this.state.forWho1,this.state.forWho2, this.state.fromWho, this.state.relationship)}</div>;
   }
 
 }

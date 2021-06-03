@@ -1,10 +1,16 @@
 import React from 'react'
 
-const WelcomePage = () => {
+
+export interface welcomePageProps{
+    startButton: () => void,
+}
+
+const WelcomePage = (props:welcomePageProps) => {
     return (
       <div>
-        <h1>BlessU</h1>
+        <h1 className='testing'>BlessU</h1>
         <h2>Never stay speechless</h2>
+        <button onClick={props.startButton}>start</button>
       </div>)
 }
 

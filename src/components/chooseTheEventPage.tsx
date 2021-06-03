@@ -1,14 +1,18 @@
 import React from 'react'
 
-const ChooseTheEventPage = () => {
+export interface ChooseTheEventProps {
+  chosenEvent: (typeOfEvent:string) => void,
+}
+
+const ChooseTheEventPage = (props:ChooseTheEventProps) => {
     return (
       <div>
         <h1>Choose the event</h1>
-        <button>Birthday</button>
-        <button>Wedding</button>
-        <button>Anniversary</button>
-        <button>New job</button>
-        <button>New born baby</button>
+        <button onClick={()=>props.chosenEvent("birthday")}>Birthday</button>
+        <button onClick={()=>props.chosenEvent("wedding")}>Wedding</button>
+        <button onClick={()=>props.chosenEvent("anniversary")}>Anniversary</button>
+        <button onClick={()=>props.chosenEvent("new job")}>New job</button>
+        <button onClick={()=>props.chosenEvent("new born baby")}>New born baby</button>
       </div>)
 }
 

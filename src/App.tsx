@@ -7,20 +7,32 @@ import './App.css';
 
 export type AppState = {
   currPage: string;
-  forWho?: string;
   typeOfEvent: string;
+  forWho1: string;
+  relationship: string;
+  forWho2: string;
+  fromWho: string;
+
 };
 
 export class App extends React.PureComponent<{}, AppState>{
   state: AppState = {
     currPage: "welcome",
-    typeOfEvent: "default"
+    typeOfEvent: "default",
+    forWho1: "default",
+    relationship: "default",
+    forWho2: "default",
+    fromWho: "default",
   };
 
   async componentDidMount() {
     this.setState({
       currPage:"welcome",
-      typeOfEvent: "default"
+      typeOfEvent: "default",
+      forWho1: "default",
+      relationship: "default",
+      forWho2: "default",
+      fromWho: "default",
     })
   }
 
@@ -31,13 +43,16 @@ export class App extends React.PureComponent<{}, AppState>{
   }
 
   choosePageToRender = () => {
-    if(this.state.currPage === "Choose The Event"){
+    if(this.state.currPage === "welcome"){
+      return <WelcomePage startButton={this.changeToChooseTheEvent}/>
+    }
+    else if(this.state.currPage === "Choose The Event"){
       return <ChooseTheEventPage chosenEvent={this.updateTypeOfEvent}/>
     }
     else if(this.state.currPage === "for who?"){
-      return <ForWhopage typeOfEvent={this.state.typeOfEvent}/>
+      return <ForWhopage typeOfEvent={this.state.typeOfEvent} updateData={this.updateFromWho}/>
     }
-    return <WelcomePage startButton={this.changeToChooseTheEvent}/>
+    return (<div>todo change</div>)
   }
 
   changeToChooseTheEvent = () => {
@@ -50,6 +65,14 @@ export class App extends React.PureComponent<{}, AppState>{
     this.setState({
       typeOfEvent: typeOfEvent,
       currPage: "for who?",
+    })
+  }
+
+  updateFromWho = (forWho1:string, forWho2:string, relationship:string) => {
+    this.setState({
+      forWho1: forWho1,
+      forWho2: forWho2,
+      relationship: relationship,
     })
   }
 

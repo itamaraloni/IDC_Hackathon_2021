@@ -1,4 +1,5 @@
 import React from 'react'
+import './chooseTheEventPage.scss'
 
 export interface ChooseTheEventProps {
   chosenEvent: (typeOfEvent:string) => void,
@@ -7,9 +8,9 @@ export interface ChooseTheEventProps {
 const ChooseTheEventPage = (props:ChooseTheEventProps) => {
     return (
       <div>
-        <h1>Choose the event</h1>
-        <button onClick={()=>props.chosenEvent("birthday")}>Birthday</button>
-        <button onClick={()=>props.chosenEvent("wedding")}>Wedding</button>
+        <h1 className="header">Choose the event</h1>
+        <button className="birthday" onClick={()=>props.chosenEvent("birthday")}>Birthday</button>
+        <button className="wedding" onClick={()=>props.chosenEvent("wedding")}>Wedding</button>
       </div>)
 }
 

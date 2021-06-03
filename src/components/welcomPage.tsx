@@ -1,4 +1,5 @@
 import React from 'react'
+import './welcomePage.scss'
 
 
 export interface welcomePageProps{
@@ -8,9 +9,9 @@ export interface welcomePageProps{
 const WelcomePage = (props:welcomePageProps) => {
     return (
       <div>
-        <h1>BlessU</h1>
-        <h2>Never stay speechless</h2>
-        <button onClick={props.startButton}>start</button>
+        <h1 className='header'>BlessU</h1>
+        <h2 className='sub-text'>Never stay speechless</h2>
+        <button className='startButton' onClick={props.startButton}>start</button>
       </div>)
 }
 

@@ -1,0 +1,20 @@
+body {
+  .header {
+    text-align: center;
+  }
+  .sub-text {
+    text-align: center;
+  }
+  .startButton {
+    margin-left: 102vh;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+  }
+  .startButton:hover {
+    background-color: #555555;
+    color: white;
+  }
+}

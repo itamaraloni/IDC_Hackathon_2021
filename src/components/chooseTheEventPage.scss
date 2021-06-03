@@ -1,0 +1,29 @@
+body {
+  .header {
+    text-align: center;
+  }
+  .birthday {
+    margin-left: 90vh;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+  }
+  .birthday:hover {
+    background-color: #555555;
+    color: white;
+  }
+  .wedding {
+    margin-left: 10vh;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+  }
+  .wedding:hover {
+    background-color: #555555;
+    color: white;
+  }
+}

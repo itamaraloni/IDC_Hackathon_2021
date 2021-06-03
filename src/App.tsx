@@ -89,7 +89,7 @@ export class App extends React.PureComponent<{}, AppState>{
     return (<div>
             <h1>Dear {forWho1.name}!</h1>
             <p>Hope you have a happy {forWho1.age}th birthday!</p>
-            {forWho1.bestQualities.length > 3 ? <p>Another year older, and you just keep getting {forWho1.bestQualities[0]}, {forWho1.bestQualities[1]}, {forWho1.bestQualities[2]} and more amazing!</p> : <p></p>}
+            <p>Another year older, and you just keep getting {forWho1.bestQualities[0]}, {forWho1.bestQualities[1]}, {forWho1.bestQualities[2]} and more amazing!</p>
             <p>Hope your birthday brings some time to relax, do your favorite things, and remember how much you’re loved</p>
             <p>Love you, {forWho1.name}.</p>
           </div>)
@@ -100,8 +100,7 @@ export class App extends React.PureComponent<{}, AppState>{
         <h1>Dear {forWho1.name} and {forWho2.name}!</h1>
         <p>Congratulations on your wedding day and best wishes for a happy life together!
             May the love you share today grow stronger as you grow old together.
-            Hope your marriage will be filled with all the right ingredients: a heap of {}, a dash of {}, a touch of {}, and a spoonful of {}.
-            Love you, {}.</p>
+            May your marriage be filled with all the right ingredients: a heap of love, a dash of humor, a touch of romance, and a spoonful of understanding. May your joy last forever. Congratulations!.</p>
       </div>)
     }
 

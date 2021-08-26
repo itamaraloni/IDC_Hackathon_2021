@@ -99,9 +99,9 @@ export class App extends React.PureComponent<{}, AppState>{
   genWedding = (recipient1: Person, recipient2: Person, writer: Person, relationship: string) => {
     return (<div>
       <h1>Dear {recipient1.name} and {recipient2.name}!</h1>
-      <p>Congratulations on your wedding day and best wishes for a happy life together!
-        May the love you share today grow stronger as you grow old together.
-        May your marriage be filled with all the right ingredients: a heap of love, a dash of humor, a touch of romance, and a spoonful of understanding.</p>
+        <p>Congratulations on your wedding day and best wishes for a happy life together!</p>
+        <p>May the love you share today grow stronger as you grow old together.</p>
+        <p>May your marriage be filled with all the right ingredients: a heap of love, a dash of humor, a touch of romance, and a spoonful of understanding.</p>
         <p>May your joy last forever. Congratulations!.</p>
         <p>Love you, {writer.name}.</p>
     </div>)

@@ -4,69 +4,26 @@ body {
     text-align: center;
   }
   .BDcakeImage {
-    position: fixed;
-    display: inline-block;
-    margin-left: 93vh;
-    margin-top: 14vh;
-    width: 20vh;
-    height: 20vh;
-  }
-  .BDleftArrow {
-    position: fixed;
-    background: url("../images/leftarrow.png") no-repeat;
-    cursor: pointer;
-    border: none;
     display: block;
-    margin-top: 3.5vh;
-    margin-left: 80vh;
-    width: 10vh;
-    height: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
   }
-  .BDrightArrow {
-    position: fixed;
-    background: url("../images/rightarrow.png") no-repeat;
-    cursor: pointer;
-    border: none;
-    display: block;
-    margin-top: 3.5vh;
-    margin-left: 116vh;
-    width: 10vh;
-    height: 10vh;
-  }
-  .BDcharImage {
-    position: fixed;
-    display: block;
-    margin-left: 85vh;
-  }
+
   .BDNameForm {
-    position: fixed;
     display: block;
-    margin-top: 40vh;
-    margin-left: 75vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
   }
-  .BDNameQuery {
-    position: fixed;
-    display: block;
-    margin-left: 6vh;
-    margin-top: -4vh;
-  }
-  .BDAgeForm {
-    position: fixed;
-    display: block;
-    margin-top: 40vh;
-    margin-left: 110vh;
-  }
-  .BDAgeQuery {
-    position: fixed;
-    display: block;
-    margin-left: 6vh;
-    margin-top: -4vh;
-  }
+
   .BDnext {
-    position: fixed;
     display: block;
-    margin-top: 50vh;
-    margin-left: 100vh;
+    margin-left: auto;
+    margin-right: auto;
     background-color: white;
     color: black;
     border: 2px solid #555555;
@@ -83,27 +40,25 @@ body {
     text-align: center;
   }
   .Wcouple {
-    position: fixed;
-    display: inline-block;
-    margin-left: 86vh;
-    width: 42vh;
-    height: 43vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
   }
   .WBnameForm {
-    position: fixed;
-    display: inline-block;
-    margin-left: 130vh;
-  }
-  .WGnameForm {
-    position: fixed;
-    display: inline-block;
-    margin-left: 50vh;
-  }
-  .Wnext {
-    position: fixed;
     display: block;
-    margin-top: 50vh;
-    margin-left: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .Wnext {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     background-color: white;
     color: black;
     border: 2px solid #555555;
